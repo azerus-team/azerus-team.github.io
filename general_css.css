@@ -1,0 +1,199 @@
+body{
+    background-image:url(http://4.bp.blogspot.com/-ziXBpjiM-fU/T5mP48N-VLI/AAAAAAAAA2U/aqnvJOUTvgE/s1600/yeticraft_final.JPG);
+    background-position:center;
+    background-attachment:fixed;
+	margin:0px;
+	}
+	/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.mainbody{
+	margin-right:auto;
+	margin-left:auto;
+	background:white;
+	width:974px;
+	border-width:3px;
+	border-radius: 10px;
+	border-style:solid;
+	border-color:black;
+	opacity:0.95;
+	margin-bottom:10px;
+	margin-top:10px;
+	padding: 10px;
+	float:left;
+}
+.mainbody h2{
+	color:indianred;
+	font-size:25pt;
+	float:center;
+	
+	
+}
+
+#tab ul li .login{
+	float:right;
+	margin-left:100px;
+}
+.mainclass{
+	
+	
+	width:1000px;
+	height:auto;
+	
+	margin-right:auto;
+	margin-left:auto;
+	
+}
+table a{
+	text-decoration:none;
+}
+#tab a{
+	padding:0;
+	
+	color:#fff;
+	padding: 0 10px;
+	text-decoration:none;
+	line-height:30px;
+	display: block;
+	height:30px;
+	float:right;
+}
+#tab a:hover{
+	background:green;
+	
+}
+
+#tab{
+	padding:0;
+}
+#tab ul li {
+	float:left;
+	
+}
+#tab ul li a {
+	color:#fff;
+	padding: 0 10px;
+	text-decoration:none;
+	line-height:30px;
+	display: block;
+	height:30px;
+	}
+
+#tab ul li a:hover{
+	background:green;
+	
+}
+#MainMenu{
+	background-image: url(images/space.png);
+	width:100%;
+	height:30px;
+	border-radius:3px;
+	
+	
+	
+}
+#sirinc{
+ width:100%;
+ height:30px;
+ background-color:lime;
+ color: #433d2e;
+ margin:5px;
+ padding: 5px;
+ float: left;
+}
+#social{
+	float: right;
+	
+	
+	
+	}
+.leftmain{
+	width:40%;
+	opacity:666;
+	height:100%;
+	padding:10px;
+	opacity:1;
+	display: block;
+	margin-right:510px;
+	float:left;
+	position: fixed;
+	}
+.rightmain{
+	width:50%;
+	height:250px;
+	opacity:100%;
+	padding:10px;
+	opacity:1;
+	display: block;
+	float: right;
+}
+.item_active{
+	background:green;
+	
+	
+}
+.minecraftname{
+	 font-family: Minecraftia;
+}
+.rightmain  a{
+	color:white;
+	padding: 0 10px;
+	text-decoration:none;
+	line-height:30px;
+	display: block;
+	height:30px;
+	background-color:#D2691E;
+	border-radius:5px;
+}
+.logotype{
+	border-radius:100px;
+}
+@font-face {
+    font-family: Minecraftia; /* Гарнитура шрифта */
+    src: url(shrift/minecraft-regular.ttf); /* Путь к файлу со шрифтом */
+   }

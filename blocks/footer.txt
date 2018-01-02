@@ -1,0 +1,6 @@
+<div id="sirinc">
+© <?php echo date("Y")?> Sirboys Inc. All Rights Reserved.
+<div id="social">
+Cоциальные сети: <a href="https://vk.com/azerusguild"><img height="16" src="images/vk.png"></a> <a href="https://discord.gg/HZWAHmF"><img height="16" src="images/discord.png"></a>
+</div>
+</div>

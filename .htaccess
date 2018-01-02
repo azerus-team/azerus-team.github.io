@@ -1,0 +1,10 @@
+DirectoryIndex home.php
+AddDefaultCharset UTF-8
+<IfModule mod_headers.c>
+   Header append Cache-Control "no-store, no-cache, must-revalidate"
+</IfModule>
+
+<IfModule mod_expires.c>
+   ExpiresActive On 
+   ExpiresDefault "now"
+</IfModule>
