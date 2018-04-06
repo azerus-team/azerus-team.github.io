@@ -3,6 +3,9 @@ body{
     background-position:center;
     background-attachment:fixed;
 	margin:0px;
+	background-repeat:no-repeat;
+    background-size: 100%;
+	
 	}
 	/* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -52,21 +55,6 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-.mainbody{
-	margin-right:auto;
-	margin-left:auto;
-	background:white;
-	width:974px;
-	border-width:3px;
-	border-radius: 10px;
-	border-style:solid;
-	border-color:black;
-	opacity:0.95;
-	margin-bottom:10px;
-	margin-top:10px;
-	padding: 10px;
-	float:left;
-}
 .mainbody h2{
 	color:indianred;
 	font-size:25pt;
@@ -74,6 +62,21 @@ table {
 	
 	
 }
+.mainbody{
+	margin-right:auto;
+	margin-left:auto;
+	background:white;
+	width:1000px;
+	border-width:3px;
+	border-radius: 10px;
+	border-style:solid;
+	border-color:black;
+	margin-bottom:10px;
+	margin-top:10px;
+	padding: 10px;
+	float:left;
+}
+
 
 #tab ul li .login{
 	float:right;
@@ -110,6 +113,9 @@ table a{
 
 #tab{
 	padding:0;
+	
+	
+	
 }
 #tab ul li {
 	float:left;
@@ -129,8 +135,8 @@ table a{
 	
 }
 #MainMenu{
-	background-image: url(images/space.png);
-	width:100%;
+	background-color:black;
+	width:1026px;
 	height:30px;
 	border-radius:3px;
 	
@@ -140,7 +146,7 @@ table a{
 #sirinc{
  width:100%;
  height:30px;
- background-color:lime;
+ background-color:#66cdaa;
  color: #433d2e;
  margin:5px;
  padding: 5px;
@@ -194,6 +200,60 @@ table a{
 	border-radius:100px;
 }
 @font-face {
-    font-family: Minecraftia; /* –ì–∞—Ä–Ω–∏—Ç—É—Ä–∞ —à—Ä–∏—Ñ—Ç–∞ */
-    src: url(shrift/minecraft-regular.ttf); /* –ü—É—Ç—å –∫ —Ñ–∞–π–ª—É —Å–æ —à—Ä–∏—Ñ—Ç–æ–º */
+    font-family: Minecraftia; /* √‡ÌËÚÛ‡ ¯ËÙÚ‡ */
+    src: url(shrift/minecraft-regular.ttf); /* œÛÚ¸ Í Ù‡ÈÎÛ ÒÓ ¯ËÙÚÓÏ */
    }
+   
+.mapsList{
+	margin-bottom:100px;
+	padding-right:10px;
+	padding-bottom:20px;
+	
+} 
+  
+.mapsList .text {
+	float: left;
+	margin: 10px;
+	word-wrap:break-word;
+	width:870px;
+}
+.mapsList .image {
+	width:100px;
+	float: left;
+	padding-top:5px;
+	
+}
+.mapsList .title {
+	display: block;
+	color: White;
+	background-color: mediumseagreen;
+	float:left;
+	width:100%;
+	
+	border-radius:5px;
+	margin-top: 5px;
+	margin-right: 10px;
+		height: 18px;
+		padding: 5px;
+	
+}
+   
+   .mapsList .lowerCase {
+	width:100%;
+	float: left;
+	 background-image:url(https://campland.su/templates/bobr/images/header.jpg);
+	border-radius:5px;
+	margin-top: 5px;
+	margin-right: 10px;
+		height: 18px;
+		padding: 5px;
+		color: #664511;;
+}
+   
+      .mapsList .lowerCase button{
+	float: right;
+	color: white;
+	text-align: center;
+	background-color: #4CAF50; /* Green */
+}
+   
