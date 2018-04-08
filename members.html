@@ -149,6 +149,16 @@ function file_get_contents( url ) { // Принимает путь к файлу
 	var Year = date.getFullYear();
 	var coinsYesturday = JsonGuildParse.guild.members[i]['dailyCoins-' + day + '-' + month + '-' + Year];
 	
+	if(Rank == "MEMBER"){
+	Rank = "Участник";
+	}
+	if(Rank == "OFFICER"){
+	Rank = "Офицер";
+	}
+	if(Rank == "GUILDMASTER"){
+	Rank = "Создатель";
+	}
+	
 	if(coinsYesturday == null){
 	coinsYesturday = 0;
 	}
