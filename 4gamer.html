@@ -9,7 +9,7 @@
 <meta http-equiv="Cache-Control" content="private">
 <meta http-equiv="Cache-Control" content="max-age=10800, must-revalidate">
 <meta http-equiv="Cache-Control" content="max-age=10800, proxy-revalidate">
-<title>NuestraArmy Guild | РЈС‡Р°СЃС‚РЅРёРєРё</title>
+<title>4GAMER Guild | Участники</title>
 <link rel="shortcut icon" href="https://media.discordapp.net/attachments/348018523961950208/374155016820490243/GyocQd5DhjWP4s.png" />
 <link href="general_css.css?1523163700" rel="stylesheet" type="text/css"/>
  <link rel="stylesheet" type="text/css" href="https://sorgalla.com/jcarousel/examples/basic/jcarousel.basic.css">
@@ -20,7 +20,7 @@
 <body>
 <div class="mainclass">
 <div class="mainbody">
-<center><h2>РўР°Р±Р»РёС†Р° СѓС‡Р°СЃС‚РЅРёРєРѕРІ РіРёР»СЊРґРёРё NuestraArmy</h2></center>
+<center><h2>Таблица участников гильдии 4GAMER</h2></center>
 <div class='table_dark'>
 <style>
 .table_dark {
@@ -63,14 +63,14 @@ border-right: none;
 
 <table cellpadding="5">
     <tr>
-		<th>РЎРєРёРЅ</th>
-        <th>РќРёРє</th>
-        <th>Р—РІР°РЅРёРµ</th>
-		<th>РЈСЂРѕРІРµРЅСЊ</th>
-        <th style="width:100px">РЎРѕР±СЂР°РЅРЅРѕ Guild Coins РІС‡РµСЂР°</th>
-		<th style="width:100px">РЎРѕР±СЂР°РЅРЅРѕ Guild Coins Р·Р° СЃРµРіРѕРґРЅСЏ</th>
-        <th>Р”Р°С‚Р° РІСЃС‚СѓРїР»РµРЅРёСЏ</th>
-		<th>РџРѕСЃР»РµРґРЅРёР№ Р·Р°С…РѕРґ</th>
+		<th>Скин</th>
+        <th>Ник</th>
+        <th>Звание</th>
+		<th>Уровень</th>
+        <th style="width:100px">Собранно Guild Coins вчера</th>
+		<th style="width:100px">Собранно Guild Coins за сегодня</th>
+        <th>Дата вступления</th>
+		<th>Последний заход</th>
     </tr>
 	
   
@@ -86,7 +86,7 @@ border-right: none;
      const REVERSE_PQ_PREFIX = -(BASE - 0.5 * GROWTH) / GROWTH;
      const REVERSE_CONST = REVERSE_PQ_PREFIX * REVERSE_PQ_PREFIX;
      const GROWTH_DIVIDES_2 = 2 / GROWTH; 
-function file_get_contents( url ) { // РџСЂРёРЅРёРјР°РµС‚ РїСѓС‚СЊ Рє С„Р°Р№Р»Сѓ, РІРѕР·СЂР°С‰Р°РµС‚ РІРµСЃСЊ С„Р°Р№Р» РІ РІРёРґРµ СЃСЂРѕРєРё
+function file_get_contents( url ) { // Принимает путь к файлу, возращает весь файл в виде сроки
     var req = null;
     try { req = new ActiveXObject("Msxml2.XMLHTTP"); } catch (e) {
         try { req = new ActiveXObject("Microsoft.XMLHTTP"); } catch (e) {
@@ -105,10 +105,10 @@ function file_get_contents( url ) { // РџСЂРёРЅРёРјР°РµС‚ РїСѓС‚СЊ Рє С„Р°Р№Р»Сѓ
 	function UnixTimeToHRT(ts) {
     var d = new Date();
     d.setTime(ts);
-    return ('0' + d.getDate()).slice(-2) + '.' + ('0' + (d.getMonth() + 1)).slice(-2) + '.' + d.getFullYear() + ' РІ ' + d.getHours() + ":" + d.getMinutes();
+    return ('0' + d.getDate()).slice(-2) + '.' + ('0' + (d.getMonth() + 1)).slice(-2) + '.' + d.getFullYear() + ' в ' + d.getHours() + ":" + d.getMinutes();
 }
 
-	var JSONguild = file_get_contents("https://api.hypixel.net/guild?key=a279747c-36b9-4c7e-a111-a32e55d30952&id=599b32290cf28c422200ead7");
+	var JSONguild = file_get_contents("https://api.hypixel.net/guild?key=a279747c-36b9-4c7e-a111-a32e55d30952&id=54b51a020cf21a1f0fcf5b9a");
 	var JsonGuildParse = JSON.parse(JSONguild);
 	var count = JsonGuildParse.guild.members.length;
 	
@@ -208,7 +208,7 @@ function file_get_contents( url ) { // РџСЂРёРЅРёРјР°РµС‚ РїСѓС‚СЊ Рє С„Р°Р№Р»Сѓ
  
 </div>
 <div id="sirinc">
-В© 2018 <a href="https://vk.com/akhannanov">Sirboys</a> Inc. All Rights Reserved.
+© 2018 <a href="https://vk.com/akhannanov">Sirboys</a> Inc. All Rights Reserved.
 
 </div></div>
 
