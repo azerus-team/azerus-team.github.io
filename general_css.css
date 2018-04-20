@@ -265,7 +265,7 @@ table a{
 	background-color: royalblue;
 	padding:3px;
 	float:left;
-	height:20px;
+	height:30px;
 	
 }
 .mainbody #delete_text{
@@ -273,7 +273,7 @@ table a{
 	background-color: DeepSkyBlue;
 	padding:3px;
 	float:left;
-	height:20px;
+	height:30px;
 	
 }
 
@@ -283,7 +283,7 @@ table a{
 	
 	color:white;
 	background-color: mediumaquamarine;
-	height:20px;
+	height:30px;
 	float:left;
 	margin-right:90%;
 	width:100%;
@@ -303,6 +303,11 @@ table a{
 }
 #textField select{
 	height: 30px;
+}
+#textField option:hover{
+	background-color:blue;
+	
+	
 }
 #textField textarea{
 	margin-bottom: -10.45555555px;
