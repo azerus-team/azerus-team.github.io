@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Minecraft Armorstand</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Create poses for Minecraft armorstands in a breeze! Free, fast, open source.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="js/colpick.css">
+    <link rel="icon" type="image/png" href="images/icon.png">
+    
+    <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r68/three.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-71932800-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+<body>
+    <script src="js/colpick.js"></script>
+    <script src="js/main.js"></script>
+
+    <div id="gl"></div>
+
+    <div class="right card">
+        
+        <div class="padding underline">
+            <h1>MINECRAFT ARMORSTAND</h1>
+            <center>
+                <a href="https://github.com/haselkern/Minecraft-ArmorStand" target="_blank"><img src="images/github.png" alt="GitHub" title="GitHub" /></a>
+                <a href="https://www.twitter.com/haselcode" target="_blank"><img src="images/twitter.png" alt="Twitter" title="Twitter" /></a>
+                <a href="https://haselkern.com/armorstand" target="_blank"><img src="images/help.png" alt="haselkern.com/armorstand" title="help" /></a>
+            </center>
+        </div>
+
+        <div class="padding underline">
+            <select id="mcversion">
+                <option value="1.11">Minecraft 1.11 and above</option>
+                <option value="1.9">Minecraft 1.9 &amp; 1.10</option>
+                <option value="1.8">Minecraft 1.8</option>
+            </select>
+        </div>
+
+        <div class="padding underline">
+            <label><input type="checkbox" name="invisible">Invisible</label><br>
+            <label><input type="checkbox" name="invulnerable">Invulnerable</label><br>
+            <label><input type="checkbox" name="persistencerequired">PersistenceRequired</label><br>
+            <label><input type="checkbox" name="nobaseplate">No Base Plate</label><br>
+            <label><input type="checkbox" name="nogravity">No Gravity</label><br>
+            <label><input type="checkbox" name="showarms">Show Arms</label><br>
+            <label><input type="checkbox" name="small">Small</label><br>
+            <label><input type="checkbox" name="marker">Marker</label><br>
+        </div>
+
+        <div class="padding underline">
+            <table class="rotations">
+                <tr>
+                    <td>Rotation:</td>
+                    <td colspan="3"><input type="range" name="rotation" min="0" max="360" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Head:</td>
+                    <td><input type="range" name="headX" min="0" max="360" value="0"></td>
+                    <td><input type="range" name="headY" min="0" max="360" value="0"></td>
+                    <td><input type="range" name="headZ" min="0" max="360" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Body:</td>
+                    <td><input type="range" name="bodyX" min="0" max="360" value="0"></td>
+                    <td><input type="range" name="bodyY" min="0" max="360" value="0"></td>
+                    <td><input type="range" name="bodyZ" min="0" max="360" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Left Leg:</td>
+                    <td><input type="range" name="leftLegX" min="0" max="360" value="0"></td>
+                    <td><input type="range" name="leftLegY" min="0" max="360" value="0"></td>
+                    <td><input type="range" name="leftLegZ" min="0" max="360" value="0"></td>
+                </tr>
+                <tr>
+                    <td>Right Leg:</td>
+                    <td><input type="range" name="rightLegX" min="0" max="360" value="0"></td>
+                    <td><input type="range" name="rightLegY" min="0" max="360" value="0"></td>
+                    <td><input type="range" name="rightLegZ" min="0" max="360" value="0"></td>
+                </tr>
+            </table>
+            <div id="inputarms">
+                <table class="rotations">
+                        <tr>
+                            <td>Left Arm:</td>
+                            <td><input type="range" name="leftArmX" min="0" max="360" value="0"></td>
+                            <td><input type="range" name="leftArmY" min="0" max="360" value="0"></td>
+                            <td><input type="range" name="leftArmZ" min="0" max="360" value="0"></td>
+                        </tr>
+                        <tr>
+                            <td>Right Arm:</td>
+                            <td><input type="range" name="rightArmX" min="0" max="360" value="0"></td>
+                            <td><input type="range" name="rightArmY" min="0" max="360" value="0"></td>
+                            <td><input type="range" name="rightArmZ" min="0" max="360" value="0"></td>
+                        </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class="padding underline">
+            <label><input type="checkbox" name="useequipment">Enable equipment</label><br>
+            <div id="customequipment">
+                <p>
+                    Enter the text id of an item (for example <i>stone</i> or <i>iron_sword</i>) into the appropriate slots. You can enter an arbitrary item for the head or hand, but the other slots must contain an appropriate item.
+                </p>
+
+                <input type="text" class="equipment" name="equipHandRight" placeholder="Item in right hand">
+                <input type="text" class="equipment" id="equipHandLeft" name="equipHandLeft" placeholder="Item in left hand">
+
+                <input type="text" class="equipment" name="equipShoes" placeholder="Boots" list="list-shoes">
+                <datalist id="list-shoes">
+                    <option value="chainmail_boots">
+                    <option value="diamond_boots">
+                    <option value="golden_boots">
+                    <option value="iron_boots">
+                    <option value="leather_boots">
+                </datalist>
+                <div class="colorfield" id="shoecolor"></div>
+
+                <input type="text" class="equipment" name="equipLeggings" placeholder="Leggings" list="list-leggings">
+                <datalist id="list-leggings">
+                    <option value="chainmail_leggings">
+                    <option value="diamond_leggings">
+                    <option value="golden_leggings">
+                    <option value="iron_leggings">
+                    <option value="leather_leggings">
+                </datalist>
+                <div class="colorfield" id="leggingscolor"></div>
+
+                <input type="text" class="equipment" name="equipChestplate" placeholder="Chestplate" list="list-chestplate">
+                <datalist id="list-chestplate">
+                    <option value="chainmail_chestplate">
+                    <option value="diamond_chestplate">
+                    <option value="golden_chestplate">
+                    <option value="iron_chestplate">
+                    <option value="leather_chestplate">
+                </datalist>
+                <div class="colorfield" id="chestplatecolor"></div>
+
+                <input type="text" class="equipment" name="equipHelmet" placeholder="Helmet" list="list-helmet">
+                <datalist id="list-helmet">
+                    <option value="chainmail_helmet">
+                    <option value="diamond_helmet">
+                    <option value="golden_helmet">
+                    <option value="iron_helmet">
+                    <option value="leather_helmet">
+                </datalist>
+                <div class="colorfield" id="helmetcolor"></div>
+
+                <br>Helmet specifies
+                <select id="equipCustomHeadMode">
+                    <option value="item">Item Name</option>
+                    <option value="player">Player Name</option>
+                    <option value="url">Image URL</option>
+                    <option value="givecode">Give Code</option>
+                </select>
+
+                <div id="minecraft-heads">
+                    <br>
+                    You can find lots of different heads here. Pick one and copy the <i>Give-Code</i> into the helmet field:
+                    <br>
+                    <a href="http://minecraft-heads.com/" target="_blank"><img src="images/mc-heads.png" alt="minecraft-heads.com" /></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="padding underline">
+            <input type="text" name="customname" id="customname" placeholder="Custom name"> <a target="_blank" href="../colorText.html">Use it</a>
+            <label><input type="checkbox" name="showcustomname">Show custom name</label>
+            <br>
+        </div>
+
+        <div class="padding">
+            <!-- THANK YOU to reddit user Oozebull for this part. -->
+            <label><input type="checkbox" name="usedisabledslots">Lock Slot Interaction</label>
+            <div id="disabledslots">
+                <div>
+                    <span class="first">&nbsp;</span>
+                    <span class="sprite" style="background-position: 0px   0px"></span>
+                    <span class="sprite" style="background-position: 0px -16px"></span>
+                    <span class="sprite" style="background-position: 0px -32px"></span>
+                    <span class="sprite" style="background-position: 0px -48px"></span>
+                    <span class="sprite" style="background-position: 0px -64px"></span>
+                </div>
+
+                <div>
+                    <span class="first">Remove</span>
+                    <span><input id="dH" type="checkbox"></input></span>
+                    <span><input id="dC" type="checkbox"></input></span>
+                    <span><input id="dL" type="checkbox"></input></span>
+                    <span><input id="dB" type="checkbox"></input></span>
+                    <span><input id="dW" type="checkbox"></input></span>
+                </div>
+                <div>
+                    <span class="first">Replace</span>
+                    <span><input id="rH" type="checkbox"></input></span>
+                    <span><input id="rC" type="checkbox"></input></span>
+                    <span><input id="rL" type="checkbox"></input></span>
+                    <span><input id="rB" type="checkbox"></input></span>
+                    <span><input id="rW" type="checkbox"></input></span>
+                </div>
+                <div>
+                    <span class="first">Place</span>
+                    <span><input id="pH" type="checkbox"></input></span>
+                    <span><input id="pC" type="checkbox"></input></span>
+                    <span><input id="pL" type="checkbox"></input></span>
+                    <span><input id="pB" type="checkbox"></input></span>
+                    <span><input id="pW" type="checkbox"></input></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="code">
+            <div id="code-copy-hint">click to copy</div>
+            <div id="code"></div>
+        </div>
+        <div id="codeinfo" class="padding">
+            <b>Please note:</b>
+            This command is too long to be executed from chat. You need to place it inside a command block. (see below)
+        </div>
+
+    </div>
+
+
+    <div class="right card">
+        <span style="cursor: pointer;" onclick="javascript:$('#getcommandblock').slideToggle();">
+            + Obtain a command block
+        </span>
+        <br>
+        <div id="getcommandblock">
+            <div class="padding">
+                If your command is longer than 256 characters (100 before Minecraft 1.11), it needs to be executed with a <i>command block</i>. Obtain one by typing:
+            </div>
+            <div class="code">
+                /give @p command_block
+            </div>
+        </div>
+    </div>
+
+
+    <div class="right card">
+        <span class="" style="cursor: pointer;" onclick="javascript:$('#troubleshooting').slideToggle();">
+        + Troubleshooting
+        </span>
+        <div id="troubleshooting">
+            <p>
+                <b>This thing uses WebGL!</b>
+                If you don't see anything on the left enable WebGL in your browser or visit the <a href="http://get.webgl.org/">official WebGL website</a> to troubleshoot problems.
+            </p>
+        </div>
+    </div>
+
+
+</body>
+</html>
