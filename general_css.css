@@ -276,7 +276,9 @@ table a{
 	height:30px;
 	
 }
-
+.mainbody button{
+cursor: pointer
+}
 
 
 .mainbody #generate{
@@ -301,9 +303,15 @@ table a{
 	
 	
 }
+
 #textField select{
 	height: 30px;
 }
+#textArea{
+}
+
+
+
 #textField option:hover{
 	background-color:blue;
 	
