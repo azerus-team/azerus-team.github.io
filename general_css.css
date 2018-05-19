@@ -196,6 +196,24 @@ table a{
 	background-color:#D2691E;
 	border-radius:5px;
 }
+.discribe{
+	border-width:2px;
+	border-radius:5px;
+	border-color:#87CEEB;
+	margin-right:10px;
+	margin-left:10px;
+	margin-bottom:20px;
+	border-style:solid;
+}
+.mainNameTags{
+	color:white;
+	background-color:#4682B4;
+	margin-left:10px;
+	font-size:1.4em;
+}
+
+
+
 .logotype{
 	border-radius:100px;
 }
