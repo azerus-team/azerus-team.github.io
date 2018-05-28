@@ -1,0 +1,20 @@
+.subm{
+	display: none;
+	float:none;
+	position:absolute;
+}
+.menu li:hover .subm{
+	display: block;
+	float:none;
+	padding: 11px 10px 10px 10px;
+	background:url("../images/nav-current.jpg");
+	margin-left:-10px;
+	margin-top:10px;
+	width:350px;
+	
+	
+	
+	}
+.subm li{float:none;
+}
+.menu li:hover .subm a{display: block;float:none;height:14px;padding: 10px 10px 10px 10px;}
