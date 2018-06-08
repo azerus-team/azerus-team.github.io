@@ -44,7 +44,7 @@
 	</div>
 </nav>
 <div class="mainbody">
-<h5 class="colorBlack">Item Give generator v.0.2 Last update(08.06.18)</h5>
+<h5 class="colorBlack">Item Give generator v.0.2.1 Last update(08.06.18)</h5>
 Minecraft item: 
 <select id="items">
 <option>acacia_bark</option>
@@ -800,7 +800,8 @@ Lore[1]: <input type="text" id="itemLore1" class="inputLore" size="105"><button 
 
 </div>
 </div>
-<p>Enchantments: </p>
+Enchantments:  <a href="javascript:void(0)" onclick="showHide('Enchantments')" class="Shower_Hider">Show/hide enchantments</a>
+<div id="Enchantments">
 <div class="protection">Protection: <input type="text" id="protection" size="1">Lvl</div>
 <div class="fireProtection">Fire Protection: <input type="text" id="fire_protection" size="1">Lvl</div>
 <div class="blast_protection">Blast Protection: <input type="text" id="blast_protection" size="1">Lvl</div>
@@ -836,14 +837,38 @@ Lore[1]: <input type="text" id="itemLore1" class="inputLore" size="105"><button 
 <div class="mending">Mending: <input type="text" id="mending" size="1">Lvl</div>
 <div class="vanishing_curse">Curse of Vanishing: <input type="text" id="vanishing_curse" size="1">Lvl</div>
 
-
+</div>
 
 
 
 
 <script>
 
+ function showHide(element_id) {
 
+                if (document.getElementById(element_id)) {
+
+                    //Записываем ссылку на элемент в переменную obj
+
+                    var obj = document.getElementById(element_id);
+
+                    //Если css-свойство display не block, то:
+
+                    if (obj.style.display != "block") {
+
+                        obj.style.display = "block"; //Показываем элемент
+
+                    }
+
+                    else obj.style.display = "none"; //Скрываем элемент
+
+                }
+
+                //Если элемент с id-шником element_id не найден, то выводим сообщение
+
+                else alert("Элемент с id: " + element_id + " не найден!");
+
+            }
 var loreCount = 1;
 function generateColorText(){
 	var generateWindow = document.getElementById("colorGenerator")

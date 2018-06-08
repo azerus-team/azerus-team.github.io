@@ -422,3 +422,12 @@ cursor: pointer
 	width:100%
 	
 }
+.Shower_Hider{
+	color:blue;
+	font-weight: 600;
+}
+
+#Enchantments{
+	display:none;
+	
+}
