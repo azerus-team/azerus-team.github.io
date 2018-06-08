@@ -406,8 +406,11 @@ cursor: pointer
 	background-color:Yellow;
 	Color:black;
 }
-
-#output{
+.colorBlack{
+	color:Black;
+	font-weight: 600;
+	}
+.output{
 	border-width: 3px;
 	border-color: darkgreen;
 	border-radius:4px;

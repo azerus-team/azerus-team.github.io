@@ -44,6 +44,7 @@
 	</div>
 </nav>
 <div class="mainbody">
+<h5 class="colorBlack">Item Give generator v.0.2 Last update(08.06.18)</h5>
 Minecraft item: 
 <select id="items">
 <option>acacia_bark</option>
@@ -789,6 +790,7 @@ Minecraft item:
 <option>yellow_terracotta</option>
 <option>yellow_wool</option>
 </select>
+
 <div class="selector" width="100%">Selector: <input type="text" id="selector" size="40%" value="@p"> Count: <input type="text" id="count" size="1" value="1"></div>
 <div class="itemName" width="100%">ItemName: <input type="text" id="itemName" size="100%"></div>
 <div class="itemLores" id="loreList" width="100">
@@ -798,20 +800,182 @@ Lore[1]: <input type="text" id="itemLore1" class="inputLore" size="105"><button 
 
 </div>
 </div>
+<p>Enchantments: </p>
+<div class="protection">Protection: <input type="text" id="protection" size="1">Lvl</div>
+<div class="fireProtection">Fire Protection: <input type="text" id="fire_protection" size="1">Lvl</div>
+<div class="blast_protection">Blast Protection: <input type="text" id="blast_protection" size="1">Lvl</div>
+<div class="projectile_protection">Projectile Protection: <input type="text" id="projectile_protection" size="1">Lvl</div>
+<div class="feather_falling">Feather falling: <input type="text" id="feather_falling" size="1">Lvl</div>
+<div class="respiration">Respiration: <input type="text" id="respiration" size="1">Lvl</div>
+<div class="aqua_affinity">Aqua Affinity: <input type="text" id="aqua_affinity" size="1">Lvl</div>
+<div class="thorns">Thorns: <input type="text" id="thorns" size="1">Lvl</div>
+<div class="depth_strider">Depth Strider: <input type="text" id="depth_strider" size="1">Lvl</div>
+<div class="frost_walker">Frost Walker: <input type="text" id="frost_walker" size="1">Lvl</div>
+<div class="binding_curse">Curse of Binding: <input type="text" id="binding_curse" size="1">Lvl</div>
+<div class="sharpness">Sharpness: <input type="text" id="sharpness" size="1">Lvl</div>
+<div class="smite">Smite: <input type="text" id="smite" size="1">Lvl</div>
+<div class="bane_of_arthropods">Bane of Arthropods: <input type="text" id="bane_of_arthropods" size="1">Lvl</div>
+<div class="knockback">Knockback: <input type="text" id="knockback" size="1">Lvl</div>
+<div class="fire_aspect">Fire Aspect: <input type="text" id="fire_aspect" size="1">Lvl</div>
+<div class="looting">Looting: <input type="text" id="looting" size="1">Lvl</div>
+<div class="sweeping">Sweeping Edge: <input type="text" id="sweeping" size="1">Lvl</div>
+<div class="efficiency">Efficiency: <input type="text" id="efficiency" size="1">Lvl</div>
+<div class="silk_touch">Silk Touch: <input type="text" id="silk_touch" size="1">Lvl</div>
+<div class="unbreaking">Unbreaking: <input type="text" id="unbreaking" size="1">Lvl</div>
+<div class="fortune">Fortune: <input type="text" id="fortune" size="1">Lvl</div>
+<div class="power">Power: <input type="text" id="power" size="1">Lvl</div>
+<div class="punch">Punch: <input type="text" id="punch" size="1">Lvl</div>
+<div class="flame">Flame: <input type="text" id="flame" size="1">Lvl</div>
+<div class="infinity">Infinity: <input type="text" id="infinity" size="1">Lvl</div>
+<div class="luck_of_the_sea">Luck of the Sea: <input type="text" id="luck_of_the_sea" size="1">Lvl</div>
+<div class="lure">Lure: <input type="text" id="lure" size="1">Lvl</div>
+<div class="loyalty">Loyalty: <input type="text" id="loyalty" size="1">Lvl</div>
+<div class="impaling">Impaling: <input type="text" id="impaling" size="1">Lvl</div>
+<div class="riptide">Riptide: <input type="text" id="riptide" size="1">Lvl</div>
+<div class="channeling">Channeling: <input type="text" id="channeling" size="1">Lvl</div>
+<div class="mending">Mending: <input type="text" id="mending" size="1">Lvl</div>
+<div class="vanishing_curse">Curse of Vanishing: <input type="text" id="vanishing_curse" size="1">Lvl</div>
+
+
+
+
 
 
 <script>
+
+
 var loreCount = 1;
-function generate(){
-	var loreArray = [document.getElementById('onelore1').value];
+function generateColorText(){
+	var generateWindow = document.getElementById("colorGenerator")
+	generateWindow.showModal();
 	
-	var itemArray = {display:{Name:document.getElementById('itemName').value,Lore:[]}}
+}
+function generate(){
+	var itemArray = {};
+	if (document.getElementById("itemName").value != '' || document.getElementById("itemLore1").value != ''){
+	itemArray.display = {Name:document.getElementById('itemName').value,Lore:[]};
 	for (i = 1; i <= loreCount; i++) {
 	itemArray.display.Lore.push(document.getElementById('itemLore'+i).value);
 	}
+	
+	}
+	if (document.getElementById('vanishing_curse').value != '' || document.getElementById('mending').value != '' || document.getElementById('channeling').value != '' || document.getElementById('riptide').value != '' || document.getElementById('impaling').value != '' || document.getElementById('loyalty').value != '' || document.getElementById('lure').value != '' || document.getElementById('luck_of_the_sea').value != '' || document.getElementById('infinity').value != '' || document.getElementById('flame').value != '' || document.getElementById('punch').value != '' || document.getElementById('power').value != '' || document.getElementById('fortune').value != '' || document.getElementById('unbreaking').value != '' || document.getElementById('silk_touch').value != '' || document.getElementById('efficiency').value != '' || document.getElementById('sweeping').value != '' || document.getElementById('looting').value != '' || document.getElementById('fire_aspect').value != '' || document.getElementById('knockback').value != '' || document.getElementById('bane_of_arthropods').value != '' || document.getElementById('smite').value != '' || document.getElementById('sharpness').value != '' || document.getElementById('binding_curse').value != '' || document.getElementById('frost_walker').value != '' || document.getElementById('depth_strider').value != '' || document.getElementById('thorns').value != '' || document.getElementById('aqua_affinity').value != '' || document.getElementById('respiration').value != '' || document.getElementById('protection').value != '' || document.getElementById('fire_protection').value != '' || document.getElementById('projectile_protection').value != ''||document.getElementById('feather_falling').value != ''){
+	itemArray.Enchantments = [];
+	}
+	if (document.getElementById('protection').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:protection",lvl:Number(document.getElementById('protection').value)});
+	}
+	if (document.getElementById('fire_protection').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:fire_protection",lvl:Number(document.getElementById('fire_protection').value)});
+	}
+	if (document.getElementById('blast_protection').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:blast_protection",lvl:Number(document.getElementById('blast_protection').value)});
+	}
+	if (document.getElementById('projectile_protection').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:projectile_protection",lvl:Number(document.getElementById('projectile_protection').value)});
+	}
+	if (document.getElementById('feather_falling').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:feather_falling",lvl:Number(document.getElementById('feather_falling').value)});
+	}
+	if (document.getElementById('respiration').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:respiration",lvl:Number(document.getElementById('respiration').value)});
+	}
+	if (document.getElementById('aqua_affinity').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:aqua_affinity",lvl:Number(document.getElementById('aqua_affinity').value)});
+	}
+	if (document.getElementById('thorns').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:thorns",lvl:Number(document.getElementById('thorns').value)});
+	}
+	if (document.getElementById('depth_strider').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:depth_strider",lvl:Number(document.getElementById('depth_strider').value)});
+	}
+	if (document.getElementById('frost_walker').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:frost_walker",lvl:Number(document.getElementById('frost_walker').value)});
+	}
+	if (document.getElementById('binding_curse').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:binding_curse",lvl:Number(document.getElementById('binding_curse').value)});
+	}
+	if (document.getElementById('sharpness').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:sharpness",lvl:Number(document.getElementById('sharpness').value)});
+	}
+	if (document.getElementById('smite').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:smite",lvl:Number(document.getElementById('smite').value)});
+	}
+	if (document.getElementById('bane_of_arthropods').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:bane_of_arthropods",lvl:Number(document.getElementById('bane_of_arthropods').value)});
+	}
+	if (document.getElementById('knockback').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:knockback",lvl:Number(document.getElementById('knockback').value)});
+	}
+	if (document.getElementById('fire_aspect').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:fire_aspect",lvl:Number(document.getElementById('fire_aspect').value)});
+	}
+	if (document.getElementById('looting').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:looting",lvl:Number(document.getElementById('looting').value)});
+	}
+	if (document.getElementById('sweeping').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:sweeping",lvl:Number(document.getElementById('sweeping').value)});
+	}
+	if (document.getElementById('efficiency').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:efficiency",lvl:Number(document.getElementById('efficiency').value)});
+	}
+	if (document.getElementById('silk_touch').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:silk_touch",lvl:Number(document.getElementById('silk_touch').value)});
+	}
+	if (document.getElementById('unbreaking').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:unbreaking",lvl:Number(document.getElementById('unbreaking').value)});
+	}
+	if (document.getElementById('fortune').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:fortune",lvl:Number(document.getElementById('fortune').value)});
+	}
+	if (document.getElementById('power').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:power",lvl:Number(document.getElementById('power').value)});
+	}
+	if (document.getElementById('punch').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:punch",lvl:Number(document.getElementById('punch').value)});
+	}
+	if (document.getElementById('flame').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:flame",lvl:Number(document.getElementById('flame').value)});
+	}
+	if (document.getElementById('infinity').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:infinity",lvl:Number(document.getElementById('infinity').value)});
+	}
+	if (document.getElementById('luck_of_the_sea').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:luck_of_the_sea",lvl:Number(document.getElementById('luck_of_the_sea').value)});
+	}
+	if (document.getElementById('lure').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:lure",lvl:Number(document.getElementById('lure').value)});
+	}
+	if (document.getElementById('loyalty').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:loyalty",lvl:Number(document.getElementById('loyalty').value)});
+	}
+	if (document.getElementById('impaling').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:impaling",lvl:Number(document.getElementById('impaling').value)});
+	}
+	if (document.getElementById('riptide').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:riptide",lvl:Number(document.getElementById('riptide').value)});
+	}
+	if (document.getElementById('channeling').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:channeling",lvl:Number(document.getElementById('channeling').value)});
+	}
+	if (document.getElementById('mending').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:mending",lvl:Number(document.getElementById('mending').value)});
+	}
+	if (document.getElementById('vanishing_curse').value != ''){
+	itemArray.Enchantments.push({id:"minecraft:vanishing_curse",lvl:Number(document.getElementById('vanishing_curse').value)});
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
 	var outPut = document.getElementById('output');
 	var outPutText = document.getElementById('items').value;
-	var outPutText = "/give "+document.getElementById('selector').value+" minecraft:" + outPutText + JSON.stringify(itemArray) + " " + document.getElementById('count').value;
+	var outPutText = "/give " + document.getElementById('selector').value + " minecraft:" + outPutText + JSON.stringify(itemArray) + " " + document.getElementById('count').value;
 	outPut.innerHTML = outPutText;
 }
 function addLore(){
@@ -834,7 +998,7 @@ function removeLore(){
 <button id=generate onClick="generate()"><center>
 Generate <img height=20 src="https://static.planetminecraft.com/files/resource_media/screenshot/1416/commandblock_lrg.jpg">
 </center></button>
-<textarea disabled rows="3" readonly id=output>
+<textarea rows="3" readonly id=output class="output">
 </textarea>
 
 
