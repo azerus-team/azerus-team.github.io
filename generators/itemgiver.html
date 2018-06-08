@@ -44,7 +44,7 @@
 	</div>
 </nav>
 <div class="mainbody">
-<h5 class="colorBlack">Item Give generator v.0.2.2 Last update(08.06.18)</h5>
+<h5 class="colorBlack">Item Give generator v.0.2.3 Last update(08.06.18)</h5>
 Minecraft item: 
 <select id="items">
 <option>acacia_bark</option>
@@ -768,8 +768,32 @@ Minecraft item:
 <option>yellow_wool</option>
 </select>
 
+<script>
+  function colorTextClose(){
+  document.getElementById("colorText").close();
+  }
+  function colorTextShow(){
+  document.getElementById("colorText").showModal();
+  }
+</script>
+
+<dialog id="colorText">
+ 
+ <iframe src="http://minecraft.tools/en/tellraw.php"  width="1000" height="500" >
+    Ваш браузер не поддерживает плавающие фреймы!
+ </iframe>
+  <button id="close" onClick="colorTextClose()">Закрыть</button>
+</dialog>
+
+
+
+
+
 <div class="selector" width="100%">Selector: <input type="text" id="selector" size="40%" value="@p"> Count: <input type="text" id="count" size="1" value="1"></div>
-<div class="itemName" width="100%">ItemName: <input type="text" id="itemName" size="100%"></div>
+<div class="itemName" width="100%">ItemName: <input type="text" id="itemName" size="100%"></div><button id="show" onClick="colorTextShow()">Color Text Generator</button>
+
+
+
 <div class="itemLores" id="loreList" width="100">
 <div class="itemLore" id="onelore1">
 
