@@ -429,7 +429,10 @@ cursor: pointer
 
 #Enchantments{
 	display:none;
-	
+	border-style:solid;
+	border-width:1px;
+	border-color:blue;
+	margin:5px;
 }
 #can_place_on{
 	display:none;

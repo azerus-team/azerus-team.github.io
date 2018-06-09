@@ -44,7 +44,7 @@
 	</div>
 </nav>
 <div class="mainbody">
-<h5 class="colorBlack">Item Give generator v.0.3.1 Last update(09.06.18)</h5>
+<h5 class="colorBlack">Item Give generator v.0.3.2 Last update(09.06.18)</h5>
 Minecraft item: 
 <select id="items">
 <option>acacia_bark</option>
@@ -2354,12 +2354,17 @@ var loreCount = 1;
 function generate(){
 	var itemArray = {};
 	if (document.getElementById("itemName").value != '' || document.getElementById("itemLore1").value != ''){
-	itemArray.display = {Name:document.getElementById('itemName').value,Lore:[]};
+	itemArray.display = {};
+	if (document.getElementById("itemName").value != ''){
+	itemArray.display.Name = document.getElementById('itemName').value;
+	}
+	if (document.getElementById("itemLore1").value != ''){
+	itemArray.display.Lore = [];
 	for (i = 1; i <= loreCount; i++) {
 	itemArray.display.Lore.push(document.getElementById('itemLore'+i).value);
 	}
 	
-	}
+	}}
 	if (document.getElementById('vanishing_curse').value != '' || document.getElementById('mending').value != '' || document.getElementById('channeling').value != '' || document.getElementById('riptide').value != '' || document.getElementById('impaling').value != '' || document.getElementById('loyalty').value != '' || document.getElementById('lure').value != '' || document.getElementById('luck_of_the_sea').value != '' || document.getElementById('infinity').value != '' || document.getElementById('flame').value != '' || document.getElementById('punch').value != '' || document.getElementById('power').value != '' || document.getElementById('fortune').value != '' || document.getElementById('unbreaking').value != '' || document.getElementById('silk_touch').value != '' || document.getElementById('efficiency').value != '' || document.getElementById('sweeping').value != '' || document.getElementById('looting').value != '' || document.getElementById('fire_aspect').value != '' || document.getElementById('knockback').value != '' || document.getElementById('bane_of_arthropods').value != '' || document.getElementById('smite').value != '' || document.getElementById('sharpness').value != '' || document.getElementById('binding_curse').value != '' || document.getElementById('frost_walker').value != '' || document.getElementById('depth_strider').value != '' || document.getElementById('thorns').value != '' || document.getElementById('aqua_affinity').value != '' || document.getElementById('respiration').value != '' || document.getElementById('protection').value != '' || document.getElementById('fire_protection').value != '' || document.getElementById('projectile_protection').value != ''||document.getElementById('feather_falling').value != ''){
 	itemArray.Enchantments = [];
 	}
