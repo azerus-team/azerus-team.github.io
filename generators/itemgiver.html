@@ -44,7 +44,7 @@
 	</div>
 </nav>
 <div class="mainbody">
-<h5 class="colorBlack">Item Give generator v.0.3.2 Last update(09.06.18)</h5>
+<h5 class="colorBlack">Item Give generator v.0.4 Last update(09.06.18) Found a bug? report <a class="reportLink" href="https://github.com/Sirboys/Sirboys.github.io/issues">this</a> </h5> 
 Minecraft item: 
 <select id="items">
 <option>acacia_bark</option>
@@ -788,7 +788,7 @@ Minecraft item:
 
 
 <div class="selector" width="100%">Selector: <input type="text" id="selector" size="40%" value="@p"> Count: <input type="text" id="count" size="1" value="1"></div>
-<div class="itemName" width="100%">ItemName: <input type="text" id="itemName" size="100%"></div><button id="show" onClick="colorTextShow()">Color Text Generator</button>
+<div class="itemName" width="100%">ItemName: <input type="text" id="itemName" size="100%"><button id="show" onClick="colorTextShow()">Color Text Generator</button></div>
 
 
 
@@ -800,6 +800,9 @@ Lore[1]: <input type="text" id="itemLore1" class="inputLore" size="105"><button 
 </div>
 </div>
 Enchantments:  <a href="javascript:void(0)" onclick="showHide('Enchantments')" class="Shower_Hider">Show/hide enchantments</a>
+Can Place On: <a href="javascript:void(0)" onclick="showHide('can_place_on')" class="Shower_Hider">Show/hide Can place on</a>
+Can Destroy: <a href="javascript:void(0)" onclick="showHide('can_destroy')" class="Shower_Hider">Show/hide Can destroy</a>
+Hide flags: <a href="javascript:void(0)" onclick="showHide('hide_flags')" class="Shower_Hider">Show/hide Can destroy</a>
 <div id="Enchantments">
 <div class="protection">Protection: <input type="text" id="protection" size="1">Lvl</div>
 <div class="fireProtection">Fire Protection: <input type="text" id="fire_protection" size="1">Lvl</div>
@@ -837,8 +840,7 @@ Enchantments:  <a href="javascript:void(0)" onclick="showHide('Enchantments')" c
 <div class="vanishing_curse">Curse of Vanishing: <input type="text" id="vanishing_curse" size="1">Lvl</div>
 <div class="unbreakable">Unbreakable: <input type="checkbox" id="unbreakable" size="1"></div>
 </div>
-Can Place On: <a href="javascript:void(0)" onclick="showHide('can_place_on')" class="Shower_Hider">Show/hide Can place on</a>
-Can Destroy: <a href="javascript:void(0)" onclick="showHide('can_destroy')" class="Shower_Hider">Show/hide Can destroy</a>
+
 <div id="can_place_on">
 <div id="Onecan_place_on"><h5 class="colorBlack">Can Place on: </h5><button onclick="addCanPlaceOn()">+</button><button onclick="removeCanPlaceOn()">Х</button>
 <select id="can_place_on1">
@@ -2291,7 +2293,14 @@ Can Destroy: <a href="javascript:void(0)" onclick="showHide('can_destroy')" clas
 
 </div>
 </div>
-
+<div id="hide_flags">
+Enchantments: <input type="checkbox" id="enchantmentsHF" size="1">
+Modifiers: <input type="checkbox" id="modifiersHF" size="1">
+Unbreakable: <input type="checkbox" id="unbreakableHF" size="1">
+Can Destroy: <input type="checkbox" id="can_destroyHF" size="1"> 
+Can Place On: <input type="checkbox" id="can_place_onHF" size="1">
+Hide Others: <input type="checkbox" id="hide_othersHF" size="1">
+</div>
 <script>
 var canDestroyCount = 1;
 function addCanDestroy(){
@@ -2353,6 +2362,28 @@ function showHide(element_id) {
 var loreCount = 1;
 function generate(){
 	var itemArray = {};
+	if (document.getElementById("hide_othersHF").checked == true || document.getElementById("can_place_onHF").checked == true || document.getElementById("enchantmentsHF").checked == true || document.getElementById("modifiersHF").checked == true || document.getElementById("unbreakableHF").checked == true ||  document.getElementById("can_destroyHF").checked == true ){
+		var hideFlags = 0;
+		if (document.getElementById("enchantmentsHF").checked == true){
+		hideFlags = hideFlags + 1;
+		}
+		if (document.getElementById("modifiersHF").checked == true){
+		hideFlags = hideFlags + 2;
+		}
+		if (document.getElementById("unbreakableHF").checked == true){
+		hideFlags = hideFlags + 4;
+		}
+		if (document.getElementById("can_destroyHF").checked == true){
+		hideFlags = hideFlags + 8;
+		}
+		if (document.getElementById("can_place_onHF").checked == true){
+		hideFlags = hideFlags + 16;
+		}
+		if (document.getElementById("hide_othersHF").checked == true){
+		hideFlags = hideFlags + 32;
+		}
+	itemArray.HideFlags = hideFlags;
+	}
 	if (document.getElementById("itemName").value != '' || document.getElementById("itemLore1").value != ''){
 	itemArray.display = {};
 	if (document.getElementById("itemName").value != ''){
@@ -3935,10 +3966,6 @@ itemArray.CanPlaceOn.push('minecraft:yellow_wool');
 	
 	
 	}
-	
-	
-	
-	
 	var outPut = document.getElementById('output');
 	var outPutText = document.getElementById('items').value;
 	var outPutText = "/give " + document.getElementById('selector').value + " minecraft:" + outPutText + JSON.stringify(itemArray) + " " + document.getElementById('count').value;

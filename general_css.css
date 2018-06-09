@@ -448,3 +448,15 @@ cursor: pointer
 	border-color:blue;
 	margin:5px;
 }
+#hide_flags{
+	display:none;
+	border-style:solid;
+	border-width:1px;
+	border-color:blue;
+	margin:5px;
+	color:black;
+}
+.reportLink{
+	color:red;
+	
+}
