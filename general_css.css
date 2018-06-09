@@ -433,5 +433,15 @@ cursor: pointer
 }
 #can_place_on{
 	display:none;
-	
+	border-style:solid;
+	border-width:1px;
+	border-color:blue;
+	margin:5px;
+}
+#can_destroy{
+	display:none;
+	border-style:solid;
+	border-width:1px;
+	border-color:blue;
+	margin:5px;
 }

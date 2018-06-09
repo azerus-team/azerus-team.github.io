@@ -44,7 +44,7 @@
 	</div>
 </nav>
 <div class="mainbody">
-<h5 class="colorBlack">Item Give generator v.0.3 Last update(09.06.18)</h5>
+<h5 class="colorBlack">Item Give generator v.0.3.1 Last update(09.06.18)</h5>
 Minecraft item: 
 <select id="items">
 <option>acacia_bark</option>
@@ -840,7 +840,7 @@ Enchantments:  <a href="javascript:void(0)" onclick="showHide('Enchantments')" c
 Can Place On: <a href="javascript:void(0)" onclick="showHide('can_place_on')" class="Shower_Hider">Show/hide Can place on</a>
 Can Destroy: <a href="javascript:void(0)" onclick="showHide('can_destroy')" class="Shower_Hider">Show/hide Can destroy</a>
 <div id="can_place_on">
-<div id="Onecan_place_on">
+<div id="Onecan_place_on"><h5 class="colorBlack">Can Place on: </h5><button onclick="addCanPlaceOn()">+</button><button onclick="removeCanPlaceOn()">Х</button>
 <select id="can_place_on1">
 <option>none</option>
 <option>all</option>
@@ -1563,10 +1563,10 @@ Can Destroy: <a href="javascript:void(0)" onclick="showHide('can_destroy')" clas
 <option>yellow_wool</option>
 </select>
 
-</div><button onclick="addCanPlaceOn()">+</button><button onclick="removeCanPlaceOn()">Х</button>
+</div>
 </div>
 <div id="can_destroy">
-<div id="Onecan_destroy">
+<div id="Onecan_destroy"><h5 class="colorBlack">Can Destroy: </h5><button onclick="addCanDestroy()">+</button><button onclick="removeCanDestroy()">Х</button>
 <select id="can_destroy1">
 <option>none</option>
 <option>all</option>
@@ -2289,7 +2289,7 @@ Can Destroy: <a href="javascript:void(0)" onclick="showHide('can_destroy')" clas
 <option>yellow_wool</option>
 </select>
 
-</div><button onclick="addCanDestroy()">+</button><button onclick="removeCanDestroy()">Х</button>
+</div>
 </div>
 
 <script>
