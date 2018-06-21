@@ -44,9 +44,9 @@
 	</div>
 </nav>
 <div class="mainbody">
-<h5 class="colorBlack">Item Give generator v.0.4 Last update(09.06.18) Found a bug? report <a class="reportLink" href="https://github.com/Sirboys/Sirboys.github.io/issues">this</a> </h5> 
+<h5 class="colorBlack">Item Give generator v.0.4.1 Last update(09.06.18) Found a bug? report <a class="reportLink" href="https://github.com/Sirboys/Sirboys.github.io/issues">this</a> </h5> 
 Minecraft item: 
-<select id="items">
+<select id="items" onChange='itemChangeSelect()'>
 <option>acacia_bark</option>
 <option>acacia_boat</option>
 <option>acacia_door</option>
@@ -788,6 +788,7 @@ Minecraft item:
 
 
 <div class="selector" width="100%">Selector: <input type="text" id="selector" size="40%" value="@p"> Count: <input type="text" id="count" size="1" value="1"></div>
+<button onclick="itemChangeSelect()">RED COLOR</button>
 <div class="itemName" width="100%">ItemName: <input type="text" id="itemName" size="100%"><button id="show" onClick="colorTextShow()">Color Text Generator</button></div>
 
 
@@ -799,10 +800,10 @@ Lore[1]: <input type="text" id="itemLore1" class="inputLore" size="105"><button 
 
 </div>
 </div>
-Enchantments:  <a href="javascript:void(0)" onclick="showHide('Enchantments')" class="Shower_Hider">Show/hide enchantments</a>
+Enchantments:  <a href="javascript:void(0)" onclick="showHide('Enchantments')" class="Shower_Hider">Show/hide Enchantments</a>
 Can Place On: <a href="javascript:void(0)" onclick="showHide('can_place_on')" class="Shower_Hider">Show/hide Can place on</a>
 Can Destroy: <a href="javascript:void(0)" onclick="showHide('can_destroy')" class="Shower_Hider">Show/hide Can destroy</a>
-Hide flags: <a href="javascript:void(0)" onclick="showHide('hide_flags')" class="Shower_Hider">Show/hide Can destroy</a>
+Hide flags: <a href="javascript:void(0)" onclick="showHide('hide_flags')" class="Shower_Hider">Show/hide Hide flags</a>
 <div id="Enchantments">
 <div class="protection">Protection: <input type="text" id="protection" size="1">Lvl</div>
 <div class="fireProtection">Fire Protection: <input type="text" id="fire_protection" size="1">Lvl</div>
@@ -2303,7 +2304,16 @@ Hide Others: <input type="checkbox" id="hide_othersHF" size="1">
 </div>
 <script>
 var canDestroyCount = 1;
+function itemChangeSelect(){
+	var rng = window.getSelection();
+	document.selection.clear();
+	var RedColor = document.createElement('p');
+	RedColor.innerHTML = rng;
+	insertTextAtCursor(document.getElementById('itemName'),rng);
+	rng.focusNode.parentNode.style.backgroundColor = "red";
+}
 function addCanDestroy(){
+	
 	canDestroyCount++;
 	var NewPlaceOn = document.createElement('div');
 	NewPlaceOn.id = "Onecan_destroy";
