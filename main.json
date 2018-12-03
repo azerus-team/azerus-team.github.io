@@ -1,0 +1,25 @@
+{
+    "menu": [
+        {
+            "Name": "Home",
+            "Link": "index.html"
+        },
+        {
+            "Name": "Maps",
+            "Link": "maps.html"
+        },
+        {
+            "Name": "Tools",
+            "Link": "tools.html"
+        },
+        {
+            "Name": "Generators",
+            "subLinks": [
+                {
+                    "Name": "Color Text for Items&Entity",
+                    "Link": "generators/colortext.html"
+                }
+            ]
+        }
+    ]
+}
