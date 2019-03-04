@@ -1,0 +1,212 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Cache-Control" content="private">
+<meta http-equiv="Cache-Control" content="max-age=10800, must-revalidate">
+<meta http-equiv="Cache-Control" content="max-age=10800, proxy-revalidate">
+<title>DevvArmy Guild | Участники</title>
+<link rel="shortcut icon" href="https://media.discordapp.net/attachments/348018523961950208/374155016820490243/GyocQd5DhjWP4s.png" />
+<link href="general_css.css?1523163700" rel="stylesheet" type="text/css"/>
+ <link rel="stylesheet" type="text/css" href="https://sorgalla.com/jcarousel/examples/basic/jcarousel.basic.css">
+<link rel="stylesheet" href="ism/css/my-slider.css?1523163700"/>
+</head>
+
+
+<body>
+<div class="mainclass">
+<div class="mainbody">
+<center><h2>Таблица участников гильдии DevvArmy</h2></center>
+<div class='table_dark'>
+<style>
+.table_dark {
+margin-top:20px;
+font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+font-size: 14px;
+width: 100%;
+text-align: left;
+border-collapse: collapse;
+background: #252F48
+}
+table {
+width:100%
+
+
+}
+.table_dark th {
+color: #EDB749;
+border-bottom: 1px solid #37B5A5;
+padding:10px;
+}
+.table_dark td {
+color: #CAD4D6;
+border-bottom: 1px solid #37B5A5;
+border-right:1px solid #37B5A5;
+}
+.table_dark tr:last-child td {
+border-bottom: none;
+}
+.table_dark td:last-child {
+border-right: none;
+}
+.memberName{
+    color: #AAAAAA;
+	
+}
+</style>
+
+
+
+<table cellpadding="5">
+    <tr>
+		<th>Скин</th>
+        <th>Ник</th>
+        <th>Звание</th>
+		<th>Уровень</th>
+        <th>Дата вступления</th>
+		<th>Последний заход</th>
+    </tr>
+	
+  
+	<script>
+	
+	const EXP_FIELD = "networkExp";
+    const LVL_FIELD = "networkLevel";
+    const BASE = 10000;
+    const GROWTH = 2500;
+   /*   Constants to generate the total amount of XP to complete a level */
+    const HALF_GROWTH = 0.5 * GROWTH;
+ /*    Constants to look up the level from the total amount of XP   */
+     const REVERSE_PQ_PREFIX = -(BASE - 0.5 * GROWTH) / GROWTH;
+     const REVERSE_CONST = REVERSE_PQ_PREFIX * REVERSE_PQ_PREFIX;
+     const GROWTH_DIVIDES_2 = 2 / GROWTH; 
+function file_get_contents( url ) { // Принимает путь к файлу, возращает весь файл в виде сроки
+    var req = null;
+    try { req = new ActiveXObject("Msxml2.XMLHTTP"); } catch (e) {
+        try { req = new ActiveXObject("Microsoft.XMLHTTP"); } catch (e) {
+            try { req = new XMLHttpRequest(); } catch(e) {}
+        }
+    }
+    if (req == null) throw new Error('XMLHttpRequest not supported');
+ 
+    req.open("GET", url, false);
+    req.send(null);
+ 
+    return req.responseText;
+}
+
+
+	function UnixTimeToHRT(ts) {
+    var d = new Date();
+    d.setTime(ts);
+    return ('0' + d.getDate()).slice(-2) + '.' + ('0' + (d.getMonth() + 1)).slice(-2) + '.' + d.getFullYear() + ' в ' + d.getHours() + ":" + d.getMinutes();
+}
+
+	var JSONguild = file_get_contents("https://api.hypixel.net/guild?key=a279747c-36b9-4c7e-a111-a32e55d30952&id=55d58193c8f2394c93e4ca48");
+	var JsonGuildParse = JSON.parse(JSONguild);
+	var count = JsonGuildParse.guild.members.length;
+	
+	for (i = 0; i < count; i++){
+	var JsonPlayer = file_get_contents('https://api.hypixel.net/player?key=83c62ae1-e1bd-4c55-b99b-8d7c0b6451fe&uuid=' + JsonGuildParse.guild.members[i].uuid);
+	var JsonPlayerParse = JSON.parse(JsonPlayer);
+	var lvl = Math.floor(1 + REVERSE_PQ_PREFIX + Math.sqrt(REVERSE_CONST + GROWTH_DIVIDES_2 * JsonPlayerParse.player.networkExp));
+	
+	var lastJoin = JsonPlayerParse.player.lastLogin;
+	var joined = JsonGuildParse.guild.members[i].joined;
+	var Rank = JsonGuildParse.guild.members[i].rank;
+	var UUID = JsonGuildParse.guild.members[i].uuid;
+	
+	var date = new Date();
+	var day = date.getDate();
+	var month = date.getMonth();
+	var Year = date.getFullYear();
+	var coinsToday = JsonGuildParse.guild.members[i]['dailyCoins-' + day + '-' + month + '-' + Year];
+	
+	var date = new Date();
+	date.setDate(date.getDate() - 1);
+	var day = date.getDate();
+	var month = date.getMonth();
+	var Year = date.getFullYear();
+	var coinsYesturday = JsonGuildParse.guild.members[i]['dailyCoins-' + day + '-' + month + '-' + Year];
+	
+	if(coinsYesturday == null){
+	coinsYesturday = 0;
+	}
+	if(coinsToday == null){
+	coinsToday = 0;
+	}
+	
+	
+	var Name = JsonPlayerParse.player.displayname;
+	var rankColor = JsonPlayerParse.player.rankPlusColor;
+	if(JsonPlayerParse.player.newPackageRank == 'VIP'){
+		Name = '<span style=\'color:#3CE63C\'>[VIP] ' + Name;
+	}
+	
+	if(JsonPlayerParse.player.newPackageRank == 'VIP_PLUS'){
+		Name = '<span style=\'color:#3CE63C\'>[VIP</span><span style=\'color:#FFAA00\'>+</span><span style=\'color:#3CE63C\'></span><span style=\'color:#3CE63C\'>] ' + Name;
+	}
+	if(JsonPlayerParse.player.newPackageRank == 'MVP'){
+		Name = '<span style=\'color:#3CE6E6\'>[MVP] ' + Name;
+	}
+	if(JsonPlayerParse.player.newPackageRank == 'MVP_PLUS'){
+		if(rankColor == null){
+			rankColor = 'red';
+		}
+		if(rankColor == 'LIGHT_PURPLE'){
+			rankColor = '#FF55FF';
+		}
+		if(rankColor == 'DARK_GRAY'){
+			rankColor = '#555555';
+		}
+		if(rankColor == 'DARK_AQUA'){
+			rankColor = '#00AAAA';
+		}
+		if(rankColor == 'DARK_GREEN'){
+			rankColor = '#008000';
+		}
+		if(rankColor == 'DARK_PURPLE'){
+			rankColor = '#AA00AA';
+		}
+		
+		
+		Name = '<span style=\'color:#3CE6E6\'>[MVP</span><span style=\'color:' + rankColor + '\'>+</span><span style=\'color:#3CE6E6\'>] ' + Name;
+	}
+	if(JsonPlayerParse.player.newPackageRank == null){
+		Name = '<span style=\'color:#AAAAAA\'>' + Name;
+		
+	}
+	if(JsonPlayerParse.player.displayname == 'Sirboys'){
+		Name = '<span style=\'color:#ff0000\'> [CODER] ' + JsonPlayerParse.player.displayname;
+	}
+	
+	
+	document.write("<tr> <td width=\"30\"><img src=https://crafatar.com/renders/head/" + UUID + "?helm&scale=10 width='30'></td>  ");
+	document.write("<td>  "+ Name +  "   </span> </td>   ");
+	document.write("<td>  "+ Rank +  "   </td>   ");
+	document.write("<td>  "+ lvl +  "   </td>   ");
+	document.write("<td>  " + UnixTimeToHRT(joined) + " </td>  ");
+	document.write("<td>  " + UnixTimeToHRT(lastJoin) + " </td> </tr>   ");
+	}
+
+	
+	
+	</script>
+	
+</tbody>
+</table>
+	</div>
+	
+ 
+</div>
+<div id="sirinc">
+© 2018 <a href="https://vk.com/akhannanov">Sirboys</a> Inc. All Rights Reserved.
+
+</div></div>
+
+</body>
+</html>
