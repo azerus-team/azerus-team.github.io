@@ -67,8 +67,6 @@ border-right: none;
         <th>Ник</th>
         <th>Звание</th>
 		<th>Уровень</th>
-        <th style="width:100px">Собранно Guild Coins вчера</th>
-		<th style="width:100px">Собранно Guild Coins за сегодня</th>
         <th>Дата вступления</th>
 		<th>Последний заход</th>
     </tr>
@@ -191,8 +189,6 @@ function file_get_contents( url ) { // Принимает путь к файлу
 	document.write("<td>  "+ Name +  "   </span> </td>   ");
 	document.write("<td>  "+ Rank +  "   </td>   ");
 	document.write("<td>  "+ lvl +  "   </td>   ");
-	document.write("<td>  " + coinsYesturday + " </td>   ");
-	document.write("<td>  " + coinsToday + " </td>  ");
 	document.write("<td>  " + UnixTimeToHRT(joined) + " </td>  ");
 	document.write("<td>  " + UnixTimeToHRT(lastJoin) + " </td> </tr>   ");
 	}
