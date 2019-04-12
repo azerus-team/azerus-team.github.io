@@ -46,6 +46,7 @@
 "input/game/data/mw/functions/skinselector/witch.mcfunction line 1 >> ":"[Maze Wars] You have selected the \"Witch\" skin!",
 "input/game/data/mw/functions/skinselector/witch.mcfunction line 7 >> ":"The witch has the ability to impose the effect of nausea on the enemy for 12 seconds.",
 "input/game/data/mw/functions/skinselector/wizard.mcfunction line 1 >> ":"[Maze Wars] You have selected the \"Wizard\" skin!",
+"input/game/data/mw/functions/skinselector/wizard.mcfunction line 7 >> ":"The wizard has the ability to impose a stupor effect on one player from the opposing team.",
 "input/game/data/mw/functions/skinselector/wolf.mcfunction line 1 >> ":"[Maze Wars] You have selected the \"Wolf\" skin!",
 "input/game/data/mw/functions/skinselector/wolf.mcfunction line 7 >> ":"The wolf has 20 units of stamina limit.",
 "input/game/data/mw/functions/start.mcfunction line 1 >> ":"[Maze Wars] Please enter the Red team to start the game!",
