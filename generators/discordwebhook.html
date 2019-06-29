@@ -1,0 +1,38 @@
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Azerus Team | Discord WebHook sender </title>
+</head>
+<body>
+    <div id=log> Log area...
+    </div>
+    <div style="display: inline-block">
+        Discord WebHook link: <input id="link" type=text value="https://discordapp.com/api/webhooks/594519200626900992/cKCoIa7xhlTpRpQ6YCVsU3FryVIEU4oXYVWo-sD9KBpoDQ1vKkXTU7aFvLSOb_kZC3lQ">
+    </div>
+    <button onClick="send()" style="display: inline-block">Send</button>
+    <div>
+        <textarea rows="10" cols="100" id="content">{
+    "content": "FooBar"
+}</textarea>
+    </div>
+    <script>
+    function send(){
+        var link = document.getElementById('link').value;
+        var content = document.getElementById('content').value;
+        
+        try{var xhr = new XMLHttpRequest();
+        xhr.open("POST",link,false);
+        xhr.setRequestHeader("Content-Type","application/json")
+        xhr.send(content);
+        log("Success")
+        }catch(e){
+            log(e);
+        }
+
+        
+    }
+    function log(log){
+        document.getElementById('log').innerHTML = log;
+    }
+    
+    </script>
+</body>
