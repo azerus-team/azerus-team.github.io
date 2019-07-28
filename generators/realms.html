@@ -3,6 +3,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <body>
+    <div id="log">
+
+    </div>
     <input type=text id="token">
     <button onclick="mcoAvaliable()">Check</button>
 </body>
@@ -12,29 +15,20 @@
     function options_mcoAvaliable(){
         let xhr = new XMLHttpRequest();
         xhr.open("OPTIONS",host+"mco/available",false);
-        xhr.setRequestHeader("Cache-Control", "no-cache");
-        xhr.setRequestHeader("Connection", "keep-alive");
-        xhr.setRequestHeader("User-Agent", "Java/1.6.0_52");
-        xhr.setRequestHeader("Accept", "*/*");
-        xhr.setRequestHeader("Host", host);
-        xhr.setRequestHeader("Access-Control-Request-Method", "GET");
-        xhr.setRequestHeader("Access-Control-Request-Headers", "content-type");
-        xhr.setRequestHeader("Cookie",document.getElementById("token").value);
-        xhr.setRequestHeader("Origin", "https://azerus-team.github.io");
-        xhr.setRequestHeader("Accept", "*/*");
-        xhr.setRequestHeader("Accept", "*/*");
-        xhr.setRequestHeader("Accept", "*/*");
+        xhr.setRequestHeader("Set-Cookie",document.getElementById("token").value);
+        //xhr.setRequestHeader("Origin", "https://azerus-team.github.io");
     }
     function mcoAvaliable(){
-        options_mcoAvaliable();
+      //  options_mcoAvaliable();
+      document.cookie = document.getElementById("token").value;
         let xhr = new XMLHttpRequest();
         xhr.open("GET",host+"mco/available",false);
-        xhr.setRequestHeader("Cache-Control", "no-cache");
-        xhr.setRequestHeader("Connection", "keep-alive");
-        xhr.setRequestHeader("User-Agent", "Java/1.6.0_52");
-        xhr.setRequestHeader("Accept", "*/*");
-        xhr.setRequestHeader("Cookie",document.getElementById("token").value);
-        xhr.send();
+        //xhr.setRequestHeader("Cache-Control", "no-cache");
+       // xhr.setRequestHeader("Accept", "*/*");
+        //xhr.setRequestHeader("Set-Cookie",document.getElementById("token").value);
+        
+        
+        xhr.send(null);
         if (xhr.status == "200"){
             token = document.getElementById("token").value;
         }
