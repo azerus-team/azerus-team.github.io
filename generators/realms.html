@@ -7,6 +7,8 @@
 
     </div>
     <input type=text id="token">
+    <input type=text id="user">
+    <input type=text id="version">
     <button onclick="mcoAvaliable()">Check</button>
 </body>
 <script>
@@ -21,6 +23,9 @@
     function mcoAvaliable(){
       //  options_mcoAvaliable();
       document.cookie = document.getElementById("token").value;
+      document.cookie = document.getElementById("user").value;
+      document.cookie = document.getElementById("version").value;
+
         let xhr = new XMLHttpRequest();
         xhr.open("GET",host+"mco/available",false);
         //xhr.setRequestHeader("Cache-Control", "no-cache");
