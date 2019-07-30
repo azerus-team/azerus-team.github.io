@@ -7,30 +7,32 @@
 
     </div>
     <input type=text id="token">
-    <input type=text id="user">
-    <input type=text id="version">
     <button onclick="mcoAvaliable()">Check</button>
 </body>
 <script>
     var host = "https://pc.realms.minecraft.net/";
     var token = "";
-    function options_mcoAvaliable(){
+    /*function options_mcoAvaliable(){
         let xhr = new XMLHttpRequest();
         xhr.open("OPTIONS",host+"mco/available",false);
-        xhr.setRequestHeader("Set-Cookie",document.getElementById("token").value);
+        
         //xhr.setRequestHeader("Origin", "https://azerus-team.github.io");
-    }
+    }*/
     function mcoAvaliable(){
-      //  options_mcoAvaliable();
-      document.cookie = document.getElementById("token").value;
-      document.cookie = document.getElementById("user").value;
-      document.cookie = document.getElementById("version").value;
+     // options_mcoAvaliable();
+     
+      //document.cookie = document.getElementById("user").value;
+      //document.cookie = document.getElementById("version").value;
 
         let xhr = new XMLHttpRequest();
         xhr.open("GET",host+"mco/available",false);
+        xhr.withCredentials = true;
+       //xhr.setRequestHeader("Set-Cookie",document.getElementById("token").value);
+
         //xhr.setRequestHeader("Cache-Control", "no-cache");
        // xhr.setRequestHeader("Accept", "*/*");
-        //xhr.setRequestHeader("Set-Cookie",document.getElementById("token").value);
+       document.cookie = document.getElementById("token").value;
+        xhr.setRequestHeader("Cookie",document.getElementById("token").value);
         
         
         xhr.send(null);
